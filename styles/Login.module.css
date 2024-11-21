@@ -1,64 +1,72 @@
-
 .main {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr; 
+    display: flex;
+    flex-wrap: wrap;
     height: 100vh; 
   }
   
-  .container1 {
-    background-image: url('/6o3uglg8iqt61 copy.png');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .container2 {
-    background-color: #161D26;
-    display: flex; 
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    color: white; 
-    align-items: start;
-  }
-  .infoContainer {
-    margin-left: 3rem;
-    margin-top: 2rem;
-  }
-  .title {
-    font-size: 5rem;
-  }
+.container1 {
+  width: 40%;
+  min-width: 300px;
+  background-image: url('/6o3uglg8iqt61 copy.png');
+  background-size: cover;
+  background-position: center;
+}
 
-  .icons {
-    color: white;
-    transform: rotate(180deg);
-    transform-origin: center center; 
-    display: inline-block; 
-    font-size: 5rem;
-  }
+.container2 {
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 60%;
+  min-width: 500px;
+  align-items: center;
+  background-color: #161D26;
+  color: white;
+}
 
-  .title2 {
-    font-size: 2rem;
-  }
+.infoContainer {
+  margin-left: 3rem;
+  margin-top: 2rem;
+}
+
+.title {
+  font-size: 5rem;
+}
+
+.icons {
+  color: white;
+  transform: rotate(180deg);
+  transform-origin: center center; 
+  display: inline-block; 
+  font-size: 5rem;
+}
+
+.title2 {
+  font-size: 2rem;
+}
   
-  .button1 {
+.button1 {
+  text-decoration: none;
+  padding: 10px 50px;
+  font-size: 1.5em;
+  color: #FFFFFF;
+  background-color: #3690ED;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: 1px solid #3690ED;
+}
+
+.button2 {
+    background-color:#161D26;
+    color:#3690ED;
     text-decoration: none;
     padding: 10px 50px;
     font-size: 1.5em;
-    color: #FFFFFF;
-    background-color: #3690ED;
     border-radius: 30px;
     font-size: 1rem;
-    border: 1px solid #3690ED;
-    }
+    border: 1px solid grey;
+  }
 
-    .button2 {
-       background-color:#161D26;
-       color:#3690ED;
-       text-decoration: none;
-       padding: 10px 50px;
-       font-size: 1.5em;
-       border-radius: 30px;
-       font-size: 1rem;
-       border: 1px solid grey;
-    }
-    
+.button1:hover, .button2:hover {
+  cursor: pointer;
+}
+
