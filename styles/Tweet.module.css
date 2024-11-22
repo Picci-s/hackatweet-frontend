@@ -1,39 +1,21 @@
-.input {
-    width: 80%;
-    padding: 10px 5px;
-    font-size: 22px;
-    border: none;
-    border-bottom: 1px solid gray;
-    background: transparent;
-    outline: none;
-    margin-left: 3rem;
-    color: #ffffff;
-  }
-  
-.submit {
+.tweetContainer {
   display: flex;
-  justify-content: flex-end;
-  margin-right: 5rem;
-  margin-top: 1rem;
-  gap: 10px; /* Espace entre les éléments de la classe submit */
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 0;
 }
 
-.caracters {
-  margin-right: 10px; /* Ajout d'un espace avant le bouton */
+.tweetHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.button {
-  text-decoration: none;
-  padding: 6px 35px;
-  font-size: 1em;
-  color: #ffffff;
-  background-color: #3690ed;
-  border-radius: 30px;
-  font-size: 1rem;
-  border: 1px solid #3690ed;
-  margin-left: 1rem;
+.profileIcon {
+  border-radius: 50%;
 }
 
-.button:hover {
-  cursor: pointer;
+.messageContainer {
+  padding: 10px 0;
 }
