@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-.globalContainer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-    padding: 0 20px;
-    height: 100vh;
-    border: 1px solid #333333;
-    background-color: #f9f9f9;
-}
-
-.inputCard {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-    align-items: center;
-	width: 100%;
-    max-width: 400px;
-	background-color: rgba(0, 0, 0, 0.7);
-	padding: 30px;
-	border-radius: 8px;
-	border: 1px solid grey;
-}
-
-.input {
-	border-radius: 4px;
-	height: 30px;
-	border: 1px solid grey;
-	padding: 10px;
-	outline: none;
-=======
 .inputCard {
     width: 100%;
     max-width: 400px;
@@ -44,21 +13,11 @@
     height: 30px;
     border: 1px solid grey;
     padding: 10px;
->>>>>>> 616619396909fe4639f91d1bbd975dbe60967ad0
     width: 100%;
     margin-bottom: 15px;
 }
 
 .button {
-<<<<<<< HEAD
-	border-radius: 25px;
-    width: 100%;
-    padding: 12px;
-	border: none;
-    color: black;
-    background-color: white;
-	cursor: pointer;
-=======
     border-radius: 25px;
     width: 100%;
     padding: 12px;
@@ -66,7 +25,6 @@
     color: black;
     background-color: white;
     cursor: pointer;
->>>>>>> 616619396909fe4639f91d1bbd975dbe60967ad0
     font-size: 16px;
 }
 
@@ -75,9 +33,5 @@
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: bold;
-<<<<<<< HEAD
-    color:white;
-=======
     color: white;
->>>>>>> 616619396909fe4639f91d1bbd975dbe60967ad0
 }
