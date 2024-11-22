@@ -1,25 +1,49 @@
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Hashtag.module.css";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LastTweets from "./LastTweets";
 import Trends from "./Trends";
-import Tweet from "./Tweet";
 import { logout } from "../reducers/user";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import Tweet, {tweet} from './Tweet';
 
-function Home() {
+function Hashtag() {
   const dispatch = useDispatch();
   const router = useRouter();
+  const [hash, setHash] = useState([]);
+  const [search, setSearch] = useState("");
+
   const user = useSelector((State) => State.user.value);
-  console.log("Firstname:", user.firstname);
+
+  const backendGet = "http://localhost:3000";
 
   const handleLogout = () => {
     dispatch(logout());
     router.push("/");
   };
+
+  useEffect(() => {
+    fetch(`${backendGet}/tweets/read`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result) {
+          const tweetList = data.data.map((tweet) => {
+            return (
+              <tweet 
+                key={tweet._id} 
+                message={tweet.message}
+              />
+            );
+          });
+          console.log(tweetList)
+          setHash(tweetList); 
+        }
+      });
+  }, []);
 
   return (
     <div className={styles.homeContainer}>
@@ -47,15 +71,15 @@ function Home() {
       <div className={styles.centerSection}>
         <div className={styles.tweet}>
           <div>
-            <h1 className={styles.titleTweet}>Home</h1>
+            <h1 className={styles.titleTweet}>Hashtag</h1>
           </div>
           <div className={styles.textTweet}>
-          <div>
+          <div className={styles.hashtag}>
         <input
-          value={tweetContent}
-          onChange={(e) => setTweetContent(e.target.value)}
           className={styles.input}
           type="text"
+          value={hash}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </div>
             
@@ -75,4 +99,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Hashtag;

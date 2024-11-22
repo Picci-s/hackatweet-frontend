@@ -25,7 +25,7 @@ function Home() {
     <div className={styles.homeContainer}>
       <div className={styles.leftSection}>
         <div className={styles.logoTweeter}>
-          <Link href="./home" passHref>
+          <Link href="./hashtag" passHref>
             <a className={styles.icons} aria-label="Navigate to home">
               <FontAwesomeIcon icon={faTwitter} />
             </a>
