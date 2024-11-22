@@ -1,0 +1,17 @@
+.tweetContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.tweetHeaderContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.profileIcon {
+    border-radius: 50%;
+}
+
+.messageContainer {
+    padding: 10px 0;
+}

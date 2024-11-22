@@ -6,14 +6,45 @@ import LastTweets from "./LastTweets";
 import Trends from "./Trends";
 import Tweet from "./Tweet";
 import { logout } from "../reducers/user";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
+
+const backendURL = 'http://localhost:3000';
 
 function Home() {
   const dispatch = useDispatch();
   const router = useRouter();
+  // Import user from redux store
+  const user = useSelector((state) => state.user.value);
+  // Set tweet state and setter
+  const [tweetContent, setTweetContent] = useState("");
+  const [postResult, setPostResult] = useState("");
 
+  // Set handleClick function
+  const handleClick = () => {
+    fetch(`${backendURL}/tweets/creat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        token: user.token,
+        message: tweetContent,
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      if(data.result) {
+        setPostResult("Fly little tweet, fly !");
+        setTweetContent("");
+      } else {
+        setPostResult("Something get wrong")
+      };
+    });
+  };
+
+  // Set handleLogout function
   const handleLogout = () => {
     dispatch(logout());
     router.push("/");
@@ -30,12 +61,13 @@ function Home() {
           </Link>
         </div>
         <div className={styles.logout}>
-          <p>
+          <div className={styles.userInfo}>
             <FontAwesomeIcon className={styles.faCircle} icon={faCircleUser} />
-            John
-            <br /> @JohnCena
-          </p>
-
+            <div>
+              <p className={styles.firstname}>{user.firstname}</p>
+              <span className={styles.username}>@{user.username}</span>
+            </div>
+          </div>
           <button className={styles.button} onClick={handleLogout}>
             logout
           </button>
@@ -43,11 +75,24 @@ function Home() {
       </div>
       <div className={styles.centerSection}>
         <div className={styles.tweet}>
-          <div>
-            <h1 className={styles.titleTweet}>Home</h1>
-          </div>
+          <h1 className={styles.titleTweet}>Home</h1>
           <div className={styles.textTweet}>
-            <Tweet />
+            <div className={styles.inputContainer}>
+              <input
+                value={tweetContent}
+                onChange={(e) => setTweetContent(e.target.value)}
+                placeholder="What's up ?"
+                maxLength={280}
+                className={styles.input}
+                type="text"
+              />
+            </div>
+            <div className={styles.submit}>
+              <div className={styles.caracters}>
+                {tweetContent.length}/280 
+                <button onClick={() => handleClick()} className={styles.sendButton}>Tweet</button>
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.lastTweetsContainer}>
