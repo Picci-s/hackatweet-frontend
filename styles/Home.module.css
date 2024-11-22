@@ -37,7 +37,52 @@
 }
 
 .textTweet {
-  margin-left: 2rem;
+  margin: 0 2rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 22px;
+  border: none;
+  border-bottom: 1px solid gray;
+  background: transparent;
+  outline: none;
+  color: #ffffff;
+  }
+  
+.submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  gap: 10px; /* Espace entre les éléments de la classe submit */
+}
+
+.caracters {
+  margin-right: 10px; /* Ajout d'un espace avant le bouton */
+}
+
+.sendButton {
+  text-decoration: none;
+  padding: 6px 35px;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: #3690ed;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: 1px solid #3690ed;
+  margin-left: 1rem;
+}
+
+.sendButton:hover {
+  cursor: pointer;
 }
 
 .lastTweetsContainer {
@@ -76,6 +121,7 @@
   border-radius: 30px;
   font-size: 1rem;
   border: 1px solid grey;
+  margin-top: 1rem;
 }
 
 .button:hover {
@@ -83,10 +129,11 @@
 }
 
 .faCircle {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #3690ED;
   background-color: white;
   border-radius: 3rem;
+
 }
 
 .logout {
@@ -99,4 +146,23 @@
 
 .logoTweeter:hover {
   cursor: pointer;
+}
+
+.userInfo {
+  display: flex; 
+  align-items: center; 
+  gap: 0.3rem; 
+}
+
+.firstname {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.username {
+  font-size: 0.875rem;
+  color: gray;
+  text-align: center; 
+  margin:0;
 }
