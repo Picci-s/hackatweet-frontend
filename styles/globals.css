@@ -5,15 +5,12 @@
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Mont-Heavy', 'Verdana',sans-serif; ;
-}
-
-
-
-* {
-  box-sizing: border-box;
+  font-family: 'Mont-Heavy', Verdana, sans-serif;
 }
