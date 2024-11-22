@@ -37,6 +37,7 @@ function SignUp() {
           setSignUpPassword("");
           setSignUpFirstname("");
           router.push("./home");
+          
         } else {
             alert("l'authentification à échouée !")
         }

@@ -1,65 +1,105 @@
 
 .main {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr; 
-    height: 100vh; 
-    width: 100vw;
-  }
-  
-  .container1 {
-    background-image: url('/6o3uglg8iqt61 copy.png');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .container2 {
-    background-color: #161D26;
-    display: flex; 
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    color: white; 
-    align-items: start;
-  }
-  .infoContainer {
-    margin-left: 3rem;
-    margin-top: 2rem;
-  }
-  .title {
-    font-size: 5rem;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh; 
+  width: 100vw;
+}
 
-  .icons {
-    color: white;
-    transform: rotate(180deg);
-    transform-origin: center center; 
-    display: inline-block; 
-    font-size: 5rem;
-  }
+.container1 {
+width: 40%;
+min-width: 300px;
+background-image: url('/6o3uglg8iqt61 copy.png');
+background-size: cover;
+background-position: center;
+}
 
-  .title2 {
-    font-size: 2rem;
-  }
-  
-  .button1 {
-    text-decoration: none;
-    padding: 10px 50px;
-    font-size: 1.5em;
-    color: #FFFFFF;
-    background-color: #3690ED;
-    border-radius: 30px;
-    font-size: 1rem;
-    border: 1px solid #3690ED;
-    }
+.container2 {
+display: flex; 
+flex-direction: column;
+justify-content: flex-start;
+width: 60%;
+min-width: 500px;
+align-items: flex-start;
+background-color: #161D26;
+color: white;
+}
 
-    .button2 {
-       background-color:#161D26;
-       color:#3690ED;
-       text-decoration: none;
-       padding: 10px 50px;
-       font-size: 1.5em;
-       border-radius: 30px;
-       font-size: 1rem;
-       border: 1px solid grey;
-    }
-    
+.infoContainer {
+margin-left: 5rem;
+margin-top: 2rem;
+}
+
+.title {
+font-size: 5rem;
+}
+
+.icons {
+color: white;
+transform: rotate(180deg);
+transform-origin: center center; 
+display: inline-block; 
+font-size: 5rem;
+}
+
+.title2 {
+font-size: 2rem;
+}
+
+.button1 {
+text-decoration: none;
+padding: 10px 50px;
+font-size: 1.5em;
+color: #FFFFFF;
+background-color: #3690ED;
+border-radius: 30px;
+font-size: 1rem;
+border: 1px solid #3690ED;
+}
+
+.button2 {
+  background-color:#161D26;
+  color:#3690ED;
+  text-decoration: none;
+  padding: 10px 50px;
+  font-size: 1.5em;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: 1px solid grey;
+}
+
+.button1:hover, .button2:hover {
+cursor: pointer;
+}
+
+.signupModal .ant-modal {
+  background-color: #161D26;  
+  border: none;  
+  box-shadow: none;
+  max-width: none;  
+  padding: 0; 
+}
+
+.signupModal .ant-modal-header,
+.signupModal .ant-modal-footer {
+  display: none;  
+}
+
+.signupModal .ant-modal-body {
+  padding: 0; 
+  background-color: #161D26;  
+  border-radius: 8px;  
+  overflow: hidden; 
+}
+
+.signupModal .ant-modal-mask {
+  background-color: rgba(22, 29, 38, 0.7);  
+}
+
+.signupModal .ant-modal-content {
+  background-color: #161D26;  
+  border: none;  
+  box-shadow: none;
+  max-width: none;  
+  padding: 0; 
+}
