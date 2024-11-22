@@ -1,22 +1,102 @@
-.main {
+.homeContainer {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: #161d26;
+}
+
+.leftSection {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  margin-left: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.centerSection {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px gray solid;
+  height: 100vh;
+}
+
+.tweet {
+  flex: 0.6;
+  border: 0.5px gray solid;
+}
+
+.titleTweet {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+}
+
+.textTweet {
+  margin-left: 2rem;
+}
+
+.lastTweetsContainer {
+  flex: 2;
+  border: 1px gray solid;
+  font-size: 13px;
+}
+
+.contentLastTweet {
+  margin-left: 2rem;
+}
+
+.rightSection {
+  flex: 1.1;
+  justify-content: center;
+  align-items: flex-end;
+  margin-left: 2rem;
+}
+
+.icons {
+  color: white;
+  transform: rotate(180deg);
+  transform-origin: center center;
+  display: inline-block;
+  font-size: 3rem;
+  border: none;
+  background: none;
+}
+
+.button {
+  background-color: #161d26;
+  color: white;
+  text-decoration: none;
+  padding: 8px 35px;
+  font-size: 1.2em;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: 1px solid grey;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.faCircle {
+  font-size: 3rem;
+  color: #3690ED;
+  background-color: white;
+  border-radius: 3rem;
+}
+
+.logout {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+  gap: 1px;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.logoTweeter:hover {
+  cursor: pointer;
 }

@@ -1,9 +1,13 @@
-import SignIn from '../components/SignIn';
-//import SignUp from '../components/SignUp';
+import Login from '../components/Login'
+
 
 function Index() {
-  return <SignIn /> 
-  //return <SignUp />;
+  return (
+    <div>
+      <Login/>
+ 
+    </div>
+  )
 }
 
 export default Index;
