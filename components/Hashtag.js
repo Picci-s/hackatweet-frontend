@@ -1,60 +1,46 @@
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Hashtag.module.css";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LastTweets from "./LastTweets";
 import Trends from "./Trends";
-import Tweet from "./Tweet";
 import { logout } from "../reducers/user";
-import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import Tweet, { tweet } from "./Tweet";
 
-const backendURL = 'http://localhost:3000';
-
-function Home() {
+function Hashtag() {
   const dispatch = useDispatch();
   const router = useRouter();
-  // Import user from redux store
-  const user = useSelector((state) => state.user.value);
-  // Set tweet state and setter
-  const [tweetContent, setTweetContent] = useState("");
-  const [postResult, setPostResult] = useState("");
+  const [hash, setHash] = useState([]);
+  const [search, setSearch] = useState("");
 
-  // Set handleClick function
-  const handleClick = () => {
-    fetch(`${backendURL}/tweets/creat`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        token: user.token,
-        message: tweetContent,
-      })
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      if(data.result) {
-        setPostResult("Fly little tweet, fly !");
-        setTweetContent("");
-      } else {
-        setPostResult("Something get wrong")
-      };
-    });
-  };
+  const user = useSelector((State) => State.user.value);
 
-  // Set handleLogout function
+  const backendGet = "http://localhost:3000";
+
   const handleLogout = () => {
     dispatch(logout());
     router.push("/");
   };
 
+  useEffect(() => {
+    fetch(`${backendGet}/tweets/read`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result) {
+          console.log(data);
+        }
+      });
+  }, []);
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.leftSection}>
         <div className={styles.logoTweeter}>
-          <Link href="./hashtag" passHref>
+          <Link href="./home" passHref>
             <a className={styles.icons} aria-label="Navigate to home">
               <FontAwesomeIcon icon={faTwitter} />
             </a>
@@ -75,23 +61,17 @@ function Home() {
       </div>
       <div className={styles.centerSection}>
         <div className={styles.tweet}>
-          <h1 className={styles.titleTweet}>Home</h1>
+          <div>
+            <h1 className={styles.titleTweet}>Hashtag</h1>
+          </div>
           <div className={styles.textTweet}>
-            <div className={styles.inputContainer}>
+            <div className={styles.hashtag}>
               <input
-                value={tweetContent}
-                onChange={(e) => setTweetContent(e.target.value)}
-                placeholder="What's up ?"
-                maxLength={280}
                 className={styles.input}
                 type="text"
+                value={hash}
+                onChange={(e) => setSearch(e.target.value)}
               />
-            </div>
-            <div className={styles.submit}>
-              <div className={styles.caracters}>
-                {tweetContent.length}/280 
-                <button onClick={() => handleClick()} className={styles.sendButton}>Tweet</button>
-              </div>
             </div>
           </div>
         </div>
@@ -109,4 +89,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Hashtag;
