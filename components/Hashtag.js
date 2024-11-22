@@ -50,7 +50,15 @@ function Home() {
             <h1 className={styles.titleTweet}>Home</h1>
           </div>
           <div className={styles.textTweet}>
-            <Tweet />
+          <div>
+        <input
+          value={tweetContent}
+          onChange={(e) => setTweetContent(e.target.value)}
+          className={styles.input}
+          type="text"
+        />
+      </div>
+            
           </div>
         </div>
         <div className={styles.lastTweetsContainer}>

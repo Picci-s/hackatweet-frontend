@@ -43,7 +43,7 @@ function SignUp() {
         }
       });
   };
-
+console.log(user)
 
 
   return (

@@ -76,6 +76,7 @@
   border-radius: 30px;
   font-size: 1rem;
   border: 1px solid grey;
+  margin-top: 1rem;
 }
 
 .button:hover {
@@ -83,10 +84,11 @@
 }
 
 .faCircle {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #3690ED;
   background-color: white;
   border-radius: 3rem;
+
 }
 
 .logout {
@@ -99,4 +101,23 @@
 
 .logoTweeter:hover {
   cursor: pointer;
+}
+
+.userInfo {
+  display: flex; 
+  align-items: center; 
+  gap: 0.3rem; 
+}
+
+.firstname {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.username {
+  font-size: 0.875rem;
+  color: gray;
+  text-align: center; 
+  margin:0;
 }
